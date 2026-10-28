@@ -5,55 +5,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Associazione Jerry Essan Masslo</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
     <header class="header-orizzontale">
+        <div class="brand">
+            <a href="index.html" class="logo-link">
+                <img src="img/logo.png" alt="Logo">
+                <h1>Associazione Jerry Essan Masslo</h1>
+            </a>
+        </div>
 
-    <div class="brand">
-        <a href="index.html" class="logo-link">
-            <img src="img/logo.png" alt="Logo">
-            <h1>Associazione Jerry Essan Masslo</h1>
-        </a>
-    </div>
+        <button type="button" class="hamburger" id="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-    <nav class="menu-principale">
-        <ul>
-            <li><a href="index.html">Home</a></li>
+        <nav class="menu-principale" id="menu-mobile">
+            <ul>
+                <li><a href="index.html">Home</a></li>
 
-            <li class="voce-con-tendina">
-                <a href="chisiamo.html">Storia ▾</a>
-                <ul class="tendina">
-                    <li><a href="#">La nostra nascita</a></li>
-                    <li><a href="#">Chi era Jerry Masslo</a></li>
-                    <li><a href="#">I beni confiscati</a></li>
-                </ul>
-            </li>
+                <li class="voce-con-tendina">
+                    <a href="chisiamo.html">Storia ▾</a>
+                    <ul class="tendina">
+                        <li><a href="#">La nostra nascita</a></li>
+                        <li><a href="#">Chi era Jerry Masslo</a></li>
+                        <li><a href="#">I beni confiscati</a></li>
+                    </ul>
+                </li>
 
-            <li class="voce-con-tendina">
-                <a href="attivita.html">Attività ▾</a>
-                <ul class="tendina">
-                    <li><a href="#">Armadio Solidale</a></li>
-                    <li><a href="#">Doposcuola</a></li>
-                </ul>
-            </li>
+                <li class="voce-con-tendina">
+                    <a href="attivita.html">Attività ▾</a>
+                    <ul class="tendina">
+                        <li><a href="#">Armadio Solidale</a></li>
+                        <li><a href="#">Doposcuola</a></li>
+                        <li><a href="#">Attività Culturali</a></li>
+                        <li><a href="#">Camperslitta</a></li>
+                        <li><a href="#">Clean-Up</a></li>
+                        <li><a href="#">Made In Castel Volturno</a></li>
+                        <li><a href="#">Campo Estivo</a></li>
+                        <li><a href="#">Libera</a></li>
+                        <li><a href="#">Laboratori Montessoriani</a></li>
+                    </ul>
+                </li>
 
-            <li><a href="contatti.html">Contatti</a></li>
-        </ul>
-    </nav>
-</header>
+                <li><a href="contatti.html">Contatti</a></li>
+
+                <li><a href="dona.html" class="link-evidenziato">Dona</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
-        <section id="chi-siamo">
+        <section class="hero-section reveal">
+            <div class="hero-content">
+                <h2>Costruiamo un futuro di diritti e solidarietà</h2>
+                <p>Dal 2011 sul territorio di Castel Volturno per l'inclusione sociale e la lotta alle disuguaglianze.</p>
+                <div class="hero-buttons">
+                    <a href="chisiamo.html" class="btn-primario">Scopri chi siamo</a>
+                    <a href="dona.html" class="btn-secondario">Sostienici</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="reveal">
+            <h2>I Nostri Progetti</h2>
+            <p>L'Associazione Jerry Essan Masslo si impegna ogni giorno in molteplici attività per la comunità. Scopri come supportiamo il nostro territorio attraverso iniziative concrete, doposcuola, e attività culturali.</p>
         </section>
     </main>
 
     <footer id="contatti">
         <p>Viale Del Correggio 13, Baia Verde, Castel Volturno.</p>
         <p>Email: info@associazionejerrymasslo.it</p>
+        <p class="copyright">© <span id="anno-corrente"></span> Associazione Jerry Essan Masslo (ETS/ODV) - Tutti i diritti riservati.</p>
     </footer>
 
+    <div id="cookie-banner" class="cookie-banner">
+        <p>Utilizziamo solo cookie tecnici per garantirti la migliore esperienza sul nostro sito, nel pieno rispetto della tua privacy.</p>
+        <button type="button" id="accetta-cookie" class="btn-cookie">Ho capito</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const annoCorrente = new Date().getFullYear();
+            const spanAnno = document.getElementById('anno-corrente');
+            if(spanAnno) {
+                spanAnno.textContent = annoCorrente;
+            }
+
+            const menuBtn = document.getElementById('menu-btn');
+            const menuMobile = document.getElementById('menu-mobile');
+            if(menuBtn && menuMobile) {
+                menuBtn.addEventListener('click', () => {
+                    menuBtn.classList.toggle('aperto');
+                    menuMobile.classList.toggle('aperto');
+                });
+            }
+
+            const reveals = document.querySelectorAll('.reveal');
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 100;
+                reveals.forEach(reveal => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('attivo');
+                    }
+                });
+            };
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll();
+
+            const cookieBanner = document.getElementById('cookie-banner');
+            const btnCookie = document.getElementById('accetta-cookie');
+            if(cookieBanner && btnCookie) {
+                if (!localStorage.getItem('cookieAccettati')) {
+                    setTimeout(() => {
+                        cookieBanner.classList.add('mostra');
+                    }, 1000);
+                }
+                btnCookie.addEventListener('click', () => {
+                    localStorage.setItem('cookieAccettati', 'true');
+                    cookieBanner.classList.remove('mostra');
+                });
+            }
+        });
+    </script>
 </body>
 </html>

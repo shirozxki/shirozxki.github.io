@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Associazione Jerry Essan Masslo</title>
+
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header-orizzontale">
+
+    <div class="brand">
+        <a href="index.html" class="logo-link">
+            <img src="img/logo.png" alt="Logo">
+            <h1>Associazione Jerry Essan Masslo</h1>
+        </a>
+    </div>
+
+    <nav class="menu-principale">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+
+        <li class="voce-con-tendina">
+            <a href="chisiamo.html">Storia ▾</a>
+            <ul class="tendina">
+                <li><a href="#">La nostra nascita</a></li>
+                <li><a href="#">Chi era Jerry Masslo</a></li>
+                <li><a href="#">I beni confiscati</a></li>
+            </ul>
+        </li>
+
+        <li class="voce-con-tendina">
+            <a href="attivita.html">Attività ▾</a>
+            <ul class="tendina">
+                <li><a href="#">Armadio Solidale</a></li>
+                <li><a href="#">Doposcuola</a></li>
+                <li><a href="#">Attività Culturali</a></li>
+                <li><a href="#">Camperslitta</a></li>
+                <li><a href="#">Clean-Up</a></li>
+                <li><a href="#">Made In Castel Volturno</a></li>
+                <li><a href="#">Campo Estivo</a></li>
+                <li><a href="#">Libera</a></li>
+                <li><a href="#">Laboratori Montessoriani</a></li>
+            </ul>
+        </li>
+
+        <li><a href="contatti.html">Contatti</a></li>
+
+        <li><a href="dona.html" class="link-evidenziato">Dona</a></li>
+    </ul>
+</nav>
+</header>
+
+    <main>
+        <section class="sezione-dona">
+        <h2>Sostieni l'Associazione</h2>
+        <p>Il tuo contributo ci permette di portare avanti i nostri progetti sul territorio. Scegli come aiutarci.</p>
+
+            <div class="box-donazione">
+                <div class="frequenza-donazione">
+                    <button type="button" class="btn-frequenza attivo">Donazione Singola</button>
+                    <button type="button" class="btn-frequenza">Donazione Mensile</button>
+                </div>
+
+                <div class="importi-donazione">
+                    <button type="button" class="btn-importo">10€</button>
+                    <button type="button" class="btn-importo">20€</button>
+                    <button type="button" class="btn-importo">50€</button>
+                    <button type="button" class="btn-importo" id="btn-altro">Altro</button>
+                </div>
+
+                <div class="importo-personalizzato" id="box-cifra-libera">
+                    <input type="number" id="input-cifra" placeholder="Inserisci cifra" min="1">
+                    <span>€</span>
+                </div>
+
+                <a href="#" class="btn-dona-ora">Dona Ora</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contatti">
+        <p>Viale Del Correggio 13, Baia Verde, Castel Volturno.</p>
+        <p>Email: info@associazionejerrymasslo.it</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const bottoniFrequenza = document.querySelectorAll('.btn-frequenza');
+            const bottoniImporto = document.querySelectorAll('.btn-importo');
+            const boxCifraLibera = document.getElementById('box-cifra-libera');
+
+            bottoniFrequenza.forEach(bottone => {
+                bottone.addEventListener('click', () => {
+                    bottoniFrequenza.forEach(b => b.classList.remove('attivo'));
+                    bottone.classList.add('attivo');
+                });
+            });
+
+            bottoniImporto.forEach(bottone => {
+                bottone.addEventListener('click', () => {
+                    bottoniImporto.forEach(b => b.classList.remove('attivo'));
+                    bottone.classList.add('attivo');
+
+                    if (bottone.id === 'btn-altro') {
+                        boxCifraLibera.classList.add('visibile');
+                    } else {
+                        boxCifraLibera.classList.remove('visibile');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
