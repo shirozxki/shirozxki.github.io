@@ -3,80 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi Siamo | Associazione Jerry Essan Masslo</title>
+    <title>Attività | Associazione Jerry Essan Masslo</title>
 
     <link rel="icon" type="image/png" href="img/logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
     <header class="header-orizzontale">
+        <div class="brand">
+            <a href="index.html" class="logo-link">
+                <img src="img/logo.png" alt="Logo">
+                <h1>Associazione Jerry Essan Masslo</h1>
+            </a>
+        </div>
 
-    <div class="brand">
-        <a href="index.html" class="logo-link">
-            <img src="img/logo.png" alt="Logo">
-            <h1>Associazione Jerry Essan Masslo</h1>
-        </a>
-    </div>
+        <button type="button" class="hamburger" id="menu-btn" aria-label="Apri menu">
+            <span aria-hidden="true"><!-- linea 1 --></span>
+            <span aria-hidden="true"><!-- linea 2 --></span>
+            <span aria-hidden="true"><!-- linea 3 --></span>
+        </button>
 
-    <nav class="menu-principale">
-    <ul>
-        <li><a href="index.html">Home</a></li>
+        <nav class="menu-principale" id="menu-mobile">
+            <ul>
+                <li><a href="index.html">Home</a></li>
 
-        <li class="voce-con-tendina">
-            <a href="chisiamo.html">Storia ▾</a>
-            <ul class="tendina">
-                <li><a href="#">La nostra nascita</a></li>
-                <li><a href="#">Chi era Jerry Masslo</a></li>
-                <li><a href="#">I beni confiscati</a></li>
+                <li class="voce-con-tendina">
+                    <a href="chisiamo.html">Storia ▾</a>
+                    <ul class="tendina">
+                        <li><a href="#">La nostra nascita</a></li>
+                        <li><a href="#">Chi era Jerry Masslo</a></li>
+                        <li><a href="#">I beni confiscati</a></li>
+                    </ul>
+                </li>
+
+                <li class="voce-con-tendina">
+                    <a href="attivita.html">Attività ▾</a>
+                    <ul class="tendina">
+                        <li><a href="armadio.html">Armadio Solidale</a></li>
+                        <li><a href="doposcuola.html">Doposcuola</a></li>
+                        <li><a href="campo.html">Campo Estivo</a></li>
+                        <li><a href="camperslitta.html">Camperslitta</a></li>
+                        <li><a href="#">Libera</a></li>
+                        <li><a href="attivita.html#altre">Altre attività</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="contatti.html">Contatti</a></li>
+
+                <li><a href="dona.html" class="link-evidenziato">Dona</a></li>
             </ul>
-        </li>
-
-        <li class="voce-con-tendina">
-            <a href="attivita.html">Attività ▾</a>
-            <ul class="tendina">
-                <li><a href="#">Armadio Solidale</a></li>
-                <li><a href="#">Doposcuola</a></li>
-                <li><a href="#">Attività Culturali</a></li>
-                <li><a href="#">Camperslitta</a></li>
-                <li><a href="#">Clean-Up</a></li>
-                <li><a href="#">Made In Castel Volturno</a></li>
-                <li><a href="#">Campo Estivo</a></li>
-                <li><a href="#">Libera</a></li>
-                <li><a href="#">Laboratori Montessoriani</a></li>
-            </ul>
-        </li>
-
-        <li><a href="contatti.html">Contatti</a></li>
-
-        <li><a href="dona.html" class="link-evidenziato">Dona</a></li>
-    </ul>
-</nav>
-</header>
+        </nav>
+    </header>
 
     <main>
+        <header class="page-header">
+            <h1>Le Nostre Attività</h1>
+            <p>Iniziative educative, sanitarie, culturali e di solidarietà per la crescita del territorio.</p>
+        </header>
+
         <section>
-            <h2>Le Nostre Attività</h2>
-            <p>Mettiamo a disposizione diverse attività:</p>
+            <h2>Esplora le Attività</h2>
+            <p>L'Associazione promuove diversi progetti continuativi volti all'inclusione, alla formazione e al sostegno delle persone a Castel Volturno:</p>
             <ul class="lista-cliccabile">
-                <li><a href="#">Armadio Solidale</a></li>
-                <li><a href="#">Doposcuola</a></li>
-                <li><a href="#">Attività Culturali</a></li>
-                <li><a href="#">Camperslitta</a></li>
-                <li><a href="#">Clean-Up</a></li>
-                <li><a href="#">Made In Castel Volturno</a></li>
-                <li><a href="#">Campo Estivo</a></li>
+                <li><a href="armadio.html">Armadio Solidale</a></li>
+                <li><a href="doposcuola.html">Doposcuola</a></li>
+                <li><a href="campo.html">Campo Estivo</a></li>
+                <li><a href="camperslitta.html">Camperslitta</a></li>
+                <li><a href=".html">Attività Culturali</a></li>
                 <li><a href="#">Libera</a></li>
-                <li><a href="#">Laboratori Montessoriani</a></li>
             </ul>
+
+            <h2 id="altre" class="titolo-separatore">Altre attività</h2>
+            <ul class="lista-cliccabile">
+                <li><a href="ambulatorio.html">Ambulatorio Medico</a></li>
+                <li><a href="sartoria.html">Made In Castel Volturno</a></li>
+                <li><a href="#">Laboratori creativi</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Galleria Iniziative ed Eventi Culturali</h2>
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <img src="cose sito/att. culturali/festival dell'impegno civile 2022.jpg" alt="Festival impegno civile 2022">
+                </div>
+                <div class="gallery-card">
+                    <img src="cose sito/att. culturali/festival impegno civile 22.jpg" alt="Festival impegno civile 22">
+                </div>
+                <div class="gallery-card">
+                    <img src="cose sito/att. culturali/boh non mi ricordo cosa stavamo facendo.jpg" alt="Laboratorio in corso">
+                </div>
+                <div class="gallery-card">
+                    <img src="cose sito/att. culturali/in memoria della strage di san gennaro.jpg" alt="Memoria san gennaro">
+                </div>
+                <div class="gallery-card">
+                    <img src="cose sito/att. culturali/l'estate è finita locandina.jpg" alt="Locandina estate">
+                </div>
+                <div class="gallery-card">
+                    <img src="cose sito/att. culturali/laboratorio di musica 2018-19.jpg" alt="Laboratorio musica">
+                </div>
+                <div class="gallery-card">
+                    <img src="cose sito/att. culturali/laboratorio sartoria.jpg" alt="Laboratorio sartoria">
+                </div>
+                <div class="gallery-card">
+                    <img src="cose sito/att. culturali/presentazione libro renato.jpg" alt="Presentazione libro">
+                </div>
+                <div class="gallery-card">
+                    <img src="cose sito/att. culturali/presentazione salvatore porcaro.jpg" alt="Presentazione Salvatore Porcaro">
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>Viale del Correggio 13, Baia Verde, Castel Volturno.</p>
-        <p>Email: info@associazionejerrymasslo.it</p>
+    <footer id="contatti">
+        <p>Viale Del Correggio 13, Baia Verde, Castel Volturno.</p>
+        <p>Email: associazionemasslo@gmail.com</p>
+        <p class="copyright">© <span id="anno-corrente"></span> Associazione Jerry Essan Masslo (ETS/ODV) - Tutti i diritti riservati.</p>
     </footer>
 
+    <div id="cookie-banner" class="cookie-banner">
+        <p>Utilizziamo solo cookie tecnici per garantirti la migliore esperienza sul nostro sito, nel pieno rispetto della tua privacy.</p>
+        <button type="button" id="accetta-cookie" class="btn-cookie">Ho capito</button>
+    </div>
+
+    <div id="imageModal" class="image-modal">
+        <button type="button" class="image-modal-close" id="modalClose">&times;</button>
+        <img src="img/logo.png" class="image-modal-content" id="modalImg" alt="Immagine ingrandita">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const annoCorrente = new Date().getFullYear();
+            const spanAnno = document.getElementById('anno-corrente');
+            if (spanAnno) {
+                spanAnno.textContent = annoCorrente;
+            }
+
+            const menuBtn = document.getElementById('menu-btn');
+            const menuMobile = document.getElementById('menu-mobile');
+            if (menuBtn && menuMobile) {
+                menuBtn.addEventListener('click', () => {
+                    menuBtn.classList.toggle('aperto');
+                    menuMobile.classList.toggle('aperto');
+                });
+            }
+
+
+            const cookieBanner = document.getElementById('cookie-banner');
+            const btnCookie = document.getElementById('accetta-cookie');
+            if (cookieBanner && btnCookie) {
+                if (!localStorage.getItem('cookieAccettati')) {
+                    setTimeout(() => {
+                        cookieBanner.classList.add('mostra');
+                    }, 1000);
+                }
+                btnCookie.addEventListener('click', () => {
+                    localStorage.setItem('cookieAccettati', 'true');
+                    cookieBanner.classList.remove('mostra');
+                });
+            }
+
+            // Image Lightbox Modal
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            const modalClose = document.getElementById('modalClose');
+            const galleryImages = document.querySelectorAll('.gallery-card img');
+
+            galleryImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    modal.classList.add('mostra');
+                    modalImg.src = img.src;
+                    modalImg.alt = img.alt || 'Immagine ingrandita';
+                });
+            });
+
+            const closeModal = () => {
+                modal.classList.remove('mostra');
+            };
+
+            if (modalClose) {
+                modalClose.addEventListener('click', closeModal);
+            }
+
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        closeModal();
+                    }
+                });
+            }
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
+        });
+    </script>
 </body>
 </html>

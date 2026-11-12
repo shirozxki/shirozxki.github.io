@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambulatorio Medico | Associazione Jerry Essan Masslo</title>
+
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header-orizzontale">
+        <div class="brand">
+            <a href="index.html" class="logo-link">
+                <img src="img/logo.png" alt="Logo">
+                <h1>Associazione Jerry Essan Masslo</h1>
+            </a>
+        </div>
+
+        <button type="button" class="hamburger" id="menu-btn" aria-label="Apri menu">
+            <span aria-hidden="true"><!-- linea 1 --></span>
+            <span aria-hidden="true"><!-- linea 2 --></span>
+            <span aria-hidden="true"><!-- linea 3 --></span>
+        </button>
+
+        <nav class="menu-principale" id="menu-mobile">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+
+                <li class="voce-con-tendina">
+                    <a href="chisiamo.html">Storia ▾</a>
+                    <ul class="tendina">
+                        <li><a href="#">La nostra nascita</a></li>
+                        <li><a href="#">Chi era Jerry Masslo</a></li>
+                        <li><a href="#">I beni confiscati</a></li>
+                    </ul>
+                </li>
+
+                <li class="voce-con-tendina">
+                    <a href="attivita.html">Attività ▾</a>
+                    <ul class="tendina">
+                        <li><a href="armadio.html">Armadio Solidale</a></li>
+                        <li><a href="doposcuola.html">Doposcuola</a></li>
+                        <li><a href="campo.html">Campo Estivo</a></li>
+                        <li><a href="camperslitta.html">Camperslitta</a></li>
+                        <li><a href="#">Libera</a></li>
+                        <li><a href="attivita.html#altre">Altre attività</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="contatti.html">Contatti</a></li>
+
+                <li><a href="dona.html" class="link-evidenziato">Dona</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <header class="page-header">
+            <h1>Ambulatorio Medico</h1>
+            <p>Diritto alla salute e tutela sanitaria gratuita per tutta la comunità di Castel Volturno.</p>
+        </header>
+
+        <section>
+            <h2>Il Nostro Impegno per la Salute</h2>
+            <p>L'impegno dell'associazione Jerry Essan Masslo ODV per la tutela del diritto alla salute ha radici profonde che risalgono al 1989, anno della fondazione dell'Associazione a seguito del tragico omicidio di Jerry Essan Masslo. Nel febbraio 1990, grazie alla dedizione volontaria di alcuni medici, è stato avviato un ambulatorio medico gratuito specificamente rivolto alla popolazione migrante.</p>
+            <p>Da allora, l'attività sanitaria è diventata uno dei pilastri fondamentali dell'associazione, sviluppandosi attraverso una forte sinergia con strutture di accoglienza, servizi territoriali e professionisti del settore sanitario.</p>
+            <p>L'obiettivo primario è garantire il diritto fondamentale alla cura e alla salute anche a chi, a causa di barriere economiche, sociali o amministrative, incontra ostacoli nell'accesso al Servizio Sanitario Nazionale. Attualmente, l'ambulatorio medico e le attività di orientamento sanitario si svolgono regolarmente presso il Centro Fernandes ogni lunedì.</p>
+        </section>
+
+        <section>
+            <h2>Attività di Assistenza Sanitaria</h2>
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <img src="cose sito/camper/1.jpg" alt="Unità mobile sanitaria">
+                </div>
+                <div class="gallery-card">
+                    <img src="cose sito/camper/2.jpg" alt="Assistenza medica sul territorio">
+                </div>
+                <div class="gallery-card">
+                    <img src="cose sito/casa di alice/foto tendoni.jpg" alt="Spazi di accoglienza">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contatti">
+        <p>Viale Del Correggio 13, Baia Verde, Castel Volturno.</p>
+        <p>Email: associazionemasslo@gmail.com</p>
+        <p class="copyright">© <span id="anno-corrente"></span> Associazione Jerry Essan Masslo (ETS/ODV) - Tutti i diritti riservati.</p>
+    </footer>
+
+    <div id="cookie-banner" class="cookie-banner">
+        <p>Utilizziamo solo cookie tecnici per garantirti la migliore esperienza sul nostro sito, nel pieno rispetto della tua privacy.</p>
+        <button type="button" id="accetta-cookie" class="btn-cookie">Ho capito</button>
+    </div>
+
+    <div id="imageModal" class="image-modal">
+        <button type="button" class="image-modal-close" id="modalClose">&times;</button>
+        <img src="img/logo.png" class="image-modal-content" id="modalImg" alt="Immagine ingrandita">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const annoCorrente = new Date().getFullYear();
+            const spanAnno = document.getElementById('anno-corrente');
+            if (spanAnno) {
+                spanAnno.textContent = annoCorrente;
+            }
+
+            const menuBtn = document.getElementById('menu-btn');
+            const menuMobile = document.getElementById('menu-mobile');
+            if (menuBtn && menuMobile) {
+                menuBtn.addEventListener('click', () => {
+                    menuBtn.classList.toggle('aperto');
+                    menuMobile.classList.toggle('aperto');
+                });
+            }
+
+
+            const cookieBanner = document.getElementById('cookie-banner');
+            const btnCookie = document.getElementById('accetta-cookie');
+            if (cookieBanner && btnCookie) {
+                if (!localStorage.getItem('cookieAccettati')) {
+                    setTimeout(() => {
+                        cookieBanner.classList.add('mostra');
+                    }, 1000);
+                }
+                btnCookie.addEventListener('click', () => {
+                    localStorage.setItem('cookieAccettati', 'true');
+                    cookieBanner.classList.remove('mostra');
+                });
+            }
+
+            // Image Lightbox Modal
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            const modalClose = document.getElementById('modalClose');
+            const galleryImages = document.querySelectorAll('.gallery-card img');
+
+            galleryImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    modal.classList.add('mostra');
+                    modalImg.src = img.src;
+                    modalImg.alt = img.alt || 'Immagine ingrandita';
+                });
+            });
+
+            const closeModal = () => {
+                modal.classList.remove('mostra');
+            };
+
+            if (modalClose) {
+                modalClose.addEventListener('click', closeModal);
+            }
+
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        closeModal();
+                    }
+                });
+            }
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
+
+            const bottoniFrequenza = document.querySelectorAll('.btn-frequenza');
+            const bottoniImporto = document.querySelectorAll('.btn-importo');
+            const boxCifraLibera = document.getElementById('box-cifra-libera');
+
+            if (bottoniFrequenza.length > 0) {
+                bottoniFrequenza.forEach(bottone => {
+                    bottone.addEventListener('click', () => {
+                        bottoniFrequenza.forEach(b => b.classList.remove('attivo'));
+                        bottone.classList.add('attivo');
+                    });
+                });
+            }
+
+            if (bottoniImporto.length > 0 && boxCifraLibera) {
+                bottoniImporto.forEach(bottone => {
+                    bottoniImporto.forEach(b => b.classList.remove('attivo'));
+                    bottone.classList.add('attivo');
+
+                    if (bottone.id === 'btn-altro') {
+                        boxCifraLibera.classList.add('visibile');
+                    } else {
+                        boxCifraLibera.classList.remove('visibile');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

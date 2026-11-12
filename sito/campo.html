@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campo Estivo | Associazione Jerry Essan Masslo</title>
+
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header-orizzontale">
+        <div class="brand">
+            <a href="index.html" class="logo-link">
+                <img src="img/logo.png" alt="Logo">
+                <h1>Associazione Jerry Essan Masslo</h1>
+            </a>
+        </div>
+
+        <button type="button" class="hamburger" id="menu-btn" aria-label="Apri menu">
+            <span aria-hidden="true"><!-- linea 1 --></span>
+            <span aria-hidden="true"><!-- linea 2 --></span>
+            <span aria-hidden="true"><!-- linea 3 --></span>
+        </button>
+
+        <nav class="menu-principale" id="menu-mobile">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+
+                <li class="voce-con-tendina">
+                    <a href="chisiamo.html">Storia ▾</a>
+                    <ul class="tendina">
+                        <li><a href="#">La nostra nascita</a></li>
+                        <li><a href="#">Chi era Jerry Masslo</a></li>
+                        <li><a href="#">I beni confiscati</a></li>
+                    </ul>
+                </li>
+
+                <li class="voce-con-tendina">
+                    <a href="attivita.html">Attività ▾</a>
+                    <ul class="tendina">
+                        <li><a href="armadio.html">Armadio Solidale</a></li>
+                        <li><a href="doposcuola.html">Doposcuola</a></li>
+                        <li><a href="campo.html">Campo Estivo</a></li>
+                        <li><a href="camperslitta.html">Camperslitta</a></li>
+                        <li><a href="#">Libera</a></li>
+                        <li><a href="attivita.html#altre">Altre attività</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="contatti.html">Contatti</a></li>
+
+                <li><a href="dona.html" class="link-evidenziato">Dona</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <header class="page-header">
+            <h1>Campo Estivo</h1>
+            <p>Spazi di gioco, natura, espressione e crescita per bambini e ragazzi.</p>
+        </header>
+
+        <section>
+            <h2>Socializzazione, Natura e Laboratori</h2>
+            <p>Il Campo Estivo, finanziato con i fondi dell’Otto per Mille della Chiesa Valdese, è nato nel 2021 per rispondere alle difficoltà di socializzazione vissute dai più piccoli a causa delle restrizioni sanitarie e della chiusura prolungata dei servizi educativi.</p>
+            <p>Il programma unisce momenti di svago all'aperto, giornate al mare e in piscina a laboratori creativi ed educativi, come il riciclo ambientale e il teatro sociale realizzato in collaborazione con l'Associazione Teens Park per contrastare razzismo e bullismo.</p>
+            <p>Un'attenzione particolare è dedicata alla cura degli orti sociali, educando i bambini al rispetto della natura, alla condivisione e alla riscoperta del valore della pazienza e della cura collettiva.</p>
+        </section>
+
+        <section>
+            <h2>Galleria Campo Estivo</h2>
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <img src="cose sito/campo estivo/1.jpg" alt="Campo estivo 1">
+                </div>
+                <div class="gallery-card">
+                    <img src="cose sito/campo estivo/2 lab. riciclo creativo.jpg" alt="Laboratorio riciclo creativo">
+                </div>
+                <div class="gallery-card">
+                    <img src="cose sito/campo estivo/3.jpg" alt="Campo estivo 3">
+                </div>
+                <div class="gallery-card">
+                    <img src="cose sito/campo estivo/4.jpg" alt="Campo estivo 4">
+                </div>
+                <div class="gallery-card">
+                    <img src="cose sito/campo estivo/5.jpg" alt="Campo estivo 5">
+                </div>
+                <div class="gallery-card">
+                    <img src="cose sito/campo estivo/6.jpg" alt="Campo estivo 6">
+                </div>
+                <div class="gallery-card">
+                    <img src="cose sito/campo estivo/bambini vestiti.jpg" alt="Bambini al campo">
+                </div>
+                <div class="gallery-card">
+                    <img src="cose sito/campo estivo/bambini.jpg" alt="Bambini al campo 2">
+                </div>
+                <div class="gallery-card">
+                    <img src="cose sito/campo estivo/laboratorio guardazaino personale.jpg" alt="Laboratorio guardavaino">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contatti">
+        <p>Viale Del Correggio 13, Baia Verde, Castel Volturno.</p>
+        <p>Email: associazionemasslo@gmail.com</p>
+        <p class="copyright">© <span id="anno-corrente"></span> Associazione Jerry Essan Masslo (ETS/ODV) - Tutti i diritti riservati.</p>
+    </footer>
+
+    <div id="cookie-banner" class="cookie-banner">
+        <p>Utilizziamo solo cookie tecnici per garantirti la migliore esperienza sul nostro sito, nel pieno rispetto della tua privacy.</p>
+        <button type="button" id="accetta-cookie" class="btn-cookie">Ho capito</button>
+    </div>
+
+    <div id="imageModal" class="image-modal">
+        <button type="button" class="image-modal-close" id="modalClose">&times;</button>
+        <img src="img/logo.png" class="image-modal-content" id="modalImg" alt="Immagine ingrandita">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const annoCorrente = new Date().getFullYear();
+            const spanAnno = document.getElementById('anno-corrente');
+            if (spanAnno) {
+                spanAnno.textContent = annoCorrente;
+            }
+
+            const menuBtn = document.getElementById('menu-btn');
+            const menuMobile = document.getElementById('menu-mobile');
+            if (menuBtn && menuMobile) {
+                menuBtn.addEventListener('click', () => {
+                    menuBtn.classList.toggle('aperto');
+                    menuMobile.classList.toggle('aperto');
+                });
+            }
+
+
+            const cookieBanner = document.getElementById('cookie-banner');
+            const btnCookie = document.getElementById('accetta-cookie');
+            if (cookieBanner && btnCookie) {
+                if (!localStorage.getItem('cookieAccettati')) {
+                    setTimeout(() => {
+                        cookieBanner.classList.add('mostra');
+                    }, 1000);
+                }
+                btnCookie.addEventListener('click', () => {
+                    localStorage.setItem('cookieAccettati', 'true');
+                    cookieBanner.classList.remove('mostra');
+                });
+            }
+
+            // Image Lightbox Modal
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            const modalClose = document.getElementById('modalClose');
+            const galleryImages = document.querySelectorAll('.gallery-card img');
+
+            galleryImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    modal.classList.add('mostra');
+                    modalImg.src = img.src;
+                    modalImg.alt = img.alt || 'Immagine ingrandita';
+                });
+            });
+
+            const closeModal = () => {
+                modal.classList.remove('mostra');
+            };
+
+            if (modalClose) {
+                modalClose.addEventListener('click', closeModal);
+            }
+
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        closeModal();
+                    }
+                });
+            }
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

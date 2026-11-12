@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Associazione Jerry Essan Masslo</title>
+    <title>Home | Associazione Jerry Essan Masslo</title>
 
     <link rel="icon" type="image/png" href="img/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <header class="header-orizzontale">
@@ -19,10 +20,10 @@
             </a>
         </div>
 
-        <button type="button" class="hamburger" id="menu-btn">
-            <span></span>
-            <span></span>
-            <span></span>
+        <button type="button" class="hamburger" id="menu-btn" aria-label="Apri menu">
+            <span aria-hidden="true"><!-- linea 1 --></span>
+            <span aria-hidden="true"><!-- linea 2 --></span>
+            <span aria-hidden="true"><!-- linea 3 --></span>
         </button>
 
         <nav class="menu-principale" id="menu-mobile">
@@ -41,15 +42,12 @@
                 <li class="voce-con-tendina">
                     <a href="attivita.html">Attività ▾</a>
                     <ul class="tendina">
-                        <li><a href="#">Armadio Solidale</a></li>
-                        <li><a href="#">Doposcuola</a></li>
-                        <li><a href="#">Attività Culturali</a></li>
-                        <li><a href="#">Camperslitta</a></li>
-                        <li><a href="#">Clean-Up</a></li>
-                        <li><a href="#">Made In Castel Volturno</a></li>
-                        <li><a href="#">Campo Estivo</a></li>
+                        <li><a href="armadio.html">Armadio Solidale</a></li>
+                        <li><a href="doposcuola.html">Doposcuola</a></li>
+                        <li><a href="campo.html">Campo Estivo</a></li>
+                        <li><a href="camperslitta.html">Camperslitta</a></li>
                         <li><a href="#">Libera</a></li>
-                        <li><a href="#">Laboratori Montessoriani</a></li>
+                        <li><a href="attivita.html#altre">Altre attività</a></li>
                     </ul>
                 </li>
 
@@ -61,7 +59,7 @@
     </header>
 
     <main>
-        <section class="hero-section reveal">
+        <section class="hero-section">
             <div class="hero-content">
                 <h2>Costruiamo un futuro di diritti e solidarietà</h2>
                 <p>Dal 2011 sul territorio di Castel Volturno per l'inclusione sociale e la lotta alle disuguaglianze.</p>
@@ -72,15 +70,42 @@
             </div>
         </section>
 
-        <section class="reveal">
+        <section>
             <h2>I Nostri Progetti</h2>
-            <p>L'Associazione Jerry Essan Masslo si impegna ogni giorno in molteplici attività per la comunità. Scopri come supportiamo il nostro territorio attraverso iniziative concrete, doposcuola, e attività culturali.</p>
+            <p>L'Associazione Jerry Essan Masslo si impegna ogni giorno in molteplici attività per la comunità. Scopri come supportiamo il nostro territorio attraverso iniziative concrete, doposcuola, assistenza sanitaria, supporto materiale ed eventi culturali.</p>
+        </section>
+
+        <section>
+            <h2>Le Nostre Attività in Azione</h2>
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <img src="cose sito/doposcuola/1.jpg" alt="Attività doposcuola">
+                </div>
+                <div class="gallery-card">
+                    <img src="cose sito/armadio solidale/1.jpg" alt="Armadio Solidale">
+                </div>
+                <div class="gallery-card">
+                    <img src="cose sito/campo estivo/1.jpg" alt="Campo Estivo">
+                </div>
+                <div class="gallery-card">
+                    <img src="cose sito/camperslitta/1.jpg" alt="Camperslitta">
+                </div>
+                <div class="gallery-card">
+                    <img src="cose sito/att. culturali/festival dell'impegno civile 2022.jpg" alt="Festival impegno civile">
+                </div>
+                <div class="gallery-card">
+                    <img src="cose sito/casa di alice/apertura casa di alice.jpg" alt="Casa di Alice">
+                </div>
+                <div class="gallery-card">
+                    <img src="cose sito/clean up/pulizia.jpg" alt="Clean Up">
+                </div>
+            </div>
         </section>
     </main>
 
     <footer id="contatti">
         <p>Viale Del Correggio 13, Baia Verde, Castel Volturno.</p>
-        <p>Email: info@associazionejerrymasslo.it</p>
+        <p>Email: associazionemasslo@gmail.com</p>
         <p class="copyright">© <span id="anno-corrente"></span> Associazione Jerry Essan Masslo (ETS/ODV) - Tutti i diritti riservati.</p>
     </footer>
 
@@ -91,39 +116,25 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            
             const annoCorrente = new Date().getFullYear();
             const spanAnno = document.getElementById('anno-corrente');
-            if(spanAnno) {
+            if (spanAnno) {
                 spanAnno.textContent = annoCorrente;
             }
 
             const menuBtn = document.getElementById('menu-btn');
             const menuMobile = document.getElementById('menu-mobile');
-            if(menuBtn && menuMobile) {
+            if (menuBtn && menuMobile) {
                 menuBtn.addEventListener('click', () => {
                     menuBtn.classList.toggle('aperto');
                     menuMobile.classList.toggle('aperto');
                 });
             }
 
-            const reveals = document.querySelectorAll('.reveal');
-            const revealOnScroll = () => {
-                const windowHeight = window.innerHeight;
-                const elementVisible = 100;
-                reveals.forEach(reveal => {
-                    const elementTop = reveal.getBoundingClientRect().top;
-                    if (elementTop < windowHeight - elementVisible) {
-                        reveal.classList.add('attivo');
-                    }
-                });
-            };
-            window.addEventListener('scroll', revealOnScroll);
-            revealOnScroll();
 
             const cookieBanner = document.getElementById('cookie-banner');
             const btnCookie = document.getElementById('accetta-cookie');
-            if(cookieBanner && btnCookie) {
+            if (cookieBanner && btnCookie) {
                 if (!localStorage.getItem('cookieAccettati')) {
                     setTimeout(() => {
                         cookieBanner.classList.add('mostra');
@@ -132,6 +143,32 @@
                 btnCookie.addEventListener('click', () => {
                     localStorage.setItem('cookieAccettati', 'true');
                     cookieBanner.classList.remove('mostra');
+                });
+            }
+
+            const bottoniFrequenza = document.querySelectorAll('.btn-frequenza');
+            const bottoniImporto = document.querySelectorAll('.btn-importo');
+            const boxCifraLibera = document.getElementById('box-cifra-libera');
+
+            if (bottoniFrequenza.length > 0) {
+                bottoniFrequenza.forEach(bottone => {
+                    bottone.addEventListener('click', () => {
+                        bottoniFrequenza.forEach(b => b.classList.remove('attivo'));
+                        bottone.classList.add('attivo');
+                    });
+                });
+            }
+
+            if (bottoniImporto.length > 0 && boxCifraLibera) {
+                bottoniImporto.forEach(bottone => {
+                    bottoniImporto.forEach(b => b.classList.remove('attivo'));
+                    bottone.classList.add('attivo');
+
+                    if (bottone.id === 'btn-altro') {
+                        boxCifraLibera.classList.add('visibile');
+                    } else {
+                        boxCifraLibera.classList.remove('visibile');
+                    }
                 });
             }
         });
