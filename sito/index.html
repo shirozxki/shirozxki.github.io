@@ -33,9 +33,8 @@
                 <li class="voce-con-tendina">
                     <a href="chisiamo.html">Storia ▾</a>
                     <ul class="tendina">
-                        <li><a href="#">La nostra nascita</a></li>
-                        <li><a href="#">Chi era Jerry Masslo</a></li>
-                        <li><a href="#">I beni confiscati</a></li>
+                        <li><a href="chisiamo.html">La nostra storia</a></li>
+                        <li><a href="jerrymasslo.html">Chi era Jerry Masslo</a></li>
                     </ul>
                 </li>
 
@@ -82,9 +81,6 @@
                     <img src="cose sito/doposcuola/1.jpg" alt="Attività doposcuola">
                 </div>
                 <div class="gallery-card">
-                    <img src="cose sito/armadio solidale/1.jpg" alt="Armadio Solidale">
-                </div>
-                <div class="gallery-card">
                     <img src="cose sito/campo estivo/1.jpg" alt="Campo Estivo">
                 </div>
                 <div class="gallery-card">
@@ -112,6 +108,11 @@
     <div id="cookie-banner" class="cookie-banner">
         <p>Utilizziamo solo cookie tecnici per garantirti la migliore esperienza sul nostro sito, nel pieno rispetto della tua privacy.</p>
         <button type="button" id="accetta-cookie" class="btn-cookie">Ho capito</button>
+    </div>
+
+    <div id="imageModal" class="image-modal">
+        <button type="button" class="image-modal-close" id="modalClose">&times;</button>
+        <img src="img/logo.png" class="image-modal-content" id="modalImg" alt="Immagine ingrandita">
     </div>
 
     <script>
@@ -145,6 +146,42 @@
                     cookieBanner.classList.remove('mostra');
                 });
             }
+
+            // Image Lightbox Modal
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            const modalClose = document.getElementById('modalClose');
+            const galleryImages = document.querySelectorAll('.gallery-card img');
+
+            galleryImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    modal.classList.add('mostra');
+                    modalImg.src = img.src;
+                    modalImg.alt = img.alt || 'Immagine ingrandita';
+                });
+            });
+
+            const closeModal = () => {
+                modal.classList.remove('mostra');
+            };
+
+            if (modalClose) {
+                modalClose.addEventListener('click', closeModal);
+            }
+
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        closeModal();
+                    }
+                });
+            }
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
 
             const bottoniFrequenza = document.querySelectorAll('.btn-frequenza');
             const bottoniImporto = document.querySelectorAll('.btn-importo');
