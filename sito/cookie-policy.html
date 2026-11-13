@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy | Associazione Jerry Essan Masslo</title>
+
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header-orizzontale">
+        <div class="brand">
+            <a href="index.html" class="logo-link">
+                <img src="img/logo.png" alt="Logo">
+                <h1>Associazione Jerry Essan Masslo</h1>
+            </a>
+        </div>
+
+        <button type="button" class="hamburger" id="menu-btn" aria-label="Apri menu">
+            <span aria-hidden="true"><!-- linea 1 --></span>
+            <span aria-hidden="true"><!-- linea 2 --></span>
+            <span aria-hidden="true"><!-- linea 3 --></span>
+        </button>
+
+        <nav class="menu-principale" id="menu-mobile">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+
+                <li class="voce-con-tendina">
+                    <a href="chisiamo.html">Storia ▾</a>
+                    <ul class="tendina">
+                        <li><a href="chisiamo.html">La nostra storia</a></li>
+                        <li><a href="jerrymasslo.html">Chi era Jerry Masslo</a></li>
+                    </ul>
+                </li>
+
+                <li class="voce-con-tendina">
+                    <a href="attivita.html">Attività ▾</a>
+                    <ul class="tendina">
+                        <li><a href="armadio.html">Armadio Solidale</a></li>
+                        <li><a href="doposcuola.html">Doposcuola</a></li>
+                        <li><a href="campo.html">Campo Estivo</a></li>
+                        <li><a href="camperslitta.html">Camperslitta</a></li>
+                        <li><a href="libera.html">Libera</a></li>
+                        <li><a href="attivita.html#altre">Altre attività</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="contatti.html">Contatti</a></li>
+
+                <li><a href="dona.html" class="link-evidenziato">Dona</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <header class="page-header">
+            <h1>Informativa sui Cookie (Cookie Policy)</h1>
+            <p>Informazioni generali sull'uso dei cookie e strumenti di tracciamento</p>
+        </header>
+
+        <section>
+            <h2>1. Cosa sono i Cookie?</h2>
+            <p>I cookie sono piccoli file di testo che i siti visitati inviano al terminale dell'utente (browser), dove vengono memorizzati per essere poi ritrasmessi agli stessi siti alla visita successiva. Servono a garantire il corretto funzionamento del sito web e a migliorare l'esperienza di navigazione dell'utente.</p>
+        </section>
+
+        <section>
+            <h2>2. Tipologia di Cookie Utilizzati da Questo Sito</h2>
+            <p>Il presente sito web dell'Associazione Jerry Essan Masslo utilizza unicamente:</p>
+            <ul>
+                <li><strong>Cookie Tecnici Strettamente Necessari:</strong> Questi cookie consentono il corretto funzionamento del sito (es. memorizzazione dell'avvenuta presa visione del banner informativo). Non richiedono il preventivo consenso dell'utente per l'installazione in quanto indispensabili per la fornitura del servizio.</li>
+                <li><strong>Local Storage (Archiviazione Locale):</strong> Utilizziamo il supporto <code>localStorage.setItem('cookieAccettati', 'true')</code> esclusivamente per memorizzare che il visitatore ha chiuso il banner informativo iniziale, evitando di riproporlo ad ogni cambio di pagina.</li>
+            </ul>
+            <p><strong>Cookie di Profilazione / Terze Parti:</strong> Il sito attualmente non fa uso di cookie di profilazione commerciali o di tracciamento pubblicitario di terze parti.</p>
+        </section>
+
+        <section>
+            <h2>3. Come disabilitare i Cookie tramite Browser</h2>
+            <p>È possibile gestire o disattivare le preferenze sui cookie direttamente dalle impostazioni del proprio browser di navigazione:</p>
+            <ul>
+                <li><strong>Google Chrome:</strong> Impostazioni > Privacy e sicurezza > Cookie e altri dati dei siti.</li>
+                <li><strong>Mozilla Firefox:</strong> Opzioni > Privacy e sicurezza > Cookie e dati dei siti web.</li>
+                <li><strong>Apple Safari:</strong> Preferenze > Privacy > Gestisci dati siti web.</li>
+                <li><strong>Microsoft Edge:</strong> Impostazioni > Cookie e autorizzazioni sito.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer id="contatti">
+        <div class="footer-info">
+            <p><strong>Associazione Jerry Essan Masslo O.D.V. - E.T.S.</strong></p>
+            <p>Sede Legale: Viale Del Correggio 13, Baia Verde, Castel Volturno (CE)</p>
+            <p>C.F. 93013580613</p>
+            <p>Email: <a href="mailto:associazionemasslo@gmail.com">associazionemasslo@gmail.com</a> | PEC: <a href="mailto:associazionemasslo@pec.it">associazionemasslo@pec.it</a></p>
+        </div>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a> |
+            <a href="cookie-policy.html">Cookie Policy</a> |
+            <a href="trasparenza.html">Trasparenza</a>
+        </div>
+        <p class="copyright">© <span id="anno-corrente"></span> Associazione Jerry Essan Masslo (ETS/ODV) - Tutti i diritti riservati.</p>
+    </footer>
+
+    <div id="cookie-banner" class="cookie-banner">
+        <p>Utilizziamo solo cookie tecnici per garantirti la migliore esperienza sul nostro sito, nel pieno rispetto della tua privacy.</p>
+        <button type="button" id="accetta-cookie" class="btn-cookie">Ho capito</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const annoCorrente = new Date().getFullYear();
+            const spanAnno = document.getElementById('anno-corrente');
+            if (spanAnno) {
+                spanAnno.textContent = annoCorrente;
+            }
+
+            const menuBtn = document.getElementById('menu-btn');
+            const menuMobile = document.getElementById('menu-mobile');
+            if (menuBtn && menuMobile) {
+                menuBtn.addEventListener('click', () => {
+                    menuBtn.classList.toggle('aperto');
+                    menuMobile.classList.toggle('aperto');
+                });
+            }
+
+            const cookieBanner = document.getElementById('cookie-banner');
+            const btnCookie = document.getElementById('accetta-cookie');
+            if (cookieBanner && btnCookie) {
+                if (!localStorage.getItem('cookieAccettati')) {
+                    setTimeout(() => {
+                        cookieBanner.classList.add('mostra');
+                    }, 1000);
+                }
+                btnCookie.addEventListener('click', () => {
+                    localStorage.setItem('cookieAccettati', 'true');
+                    cookieBanner.classList.remove('mostra');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

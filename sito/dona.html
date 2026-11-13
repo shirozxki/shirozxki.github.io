@@ -45,7 +45,7 @@
                         <li><a href="doposcuola.html">Doposcuola</a></li>
                         <li><a href="campo.html">Campo Estivo</a></li>
                         <li><a href="camperslitta.html">Camperslitta</a></li>
-                        <li><a href="#">Libera</a></li>
+                        <li><a href="libera.html">Libera</a></li>
                         <li><a href="attivita.html#altre">Altre attività</a></li>
                     </ul>
                 </li>
@@ -60,7 +60,7 @@
     <main>
         <section class="sezione-dona">
         <h2>Sostieni l'Associazione</h2>
-        <p>Il tuo contributo ci permette di portare avanti i nostri progetti sul territorio. Scegli come aiutarci.</p>
+        <p>Il tuo contributo ci permette di portare avanti i nostri progetti sul territorio: ambulatorio sociale, doposcuola, recupero beni confiscati e supporto alle famiglie in difficoltà. Scegli come aiutarci.</p>
 
             <div class="box-donazione">
                 <div class="frequenza-donazione">
@@ -76,18 +76,33 @@
                 </div>
 
                 <div class="importo-personalizzato" id="box-cifra-libera">
-                    <input type="number" id="input-cifra" placeholder="Inserisci cifra" min="1">
+                    <input type="text" id="input-cifra" placeholder="Inserisci cifra" inputmode="decimal">
                     <span>€</span>
                 </div>
 
-                <a href="#" class="btn-dona-ora">Dona Ora</a>
+                <a href="#" class="btn-dona-ora">Dona con PayPal / Carta di Credito</a>
+
+                <div class="note-legali-dona">
+                    <p><strong>Destinazione dei Fondi &amp; Fiscalità:</strong> Le donazioni effettuate all'Associazione Jerry Essan Masslo O.D.V. (E.T.S.) sono interamente destinate al sostentamento delle attività sociali e dei servizi gratuiti sul territorio.</p>
+                    <p><strong>Deducibilità e Detraibilità Fiscale:</strong> Ai sensi dell'art. 83 del D.Lgs. 117/2017 (Codice del Terzo Settore), le donazioni erogate tramite strumenti di pagamento tracciabili (bonifico, carte, PayPal) sono detraibili o deducibili dalle imposte sui redditi nei limiti previsti dalla legge.</p>
+                    <p><strong>Sicurezza dei Pagamenti:</strong> I pagamenti online sono elaborati in sicurezza tramite gateway certificati esterni (PayPal/Stripe) in conformità allo standard PCI-DSS. Nessun dato di carta di credito viene salvato o transita sui nostri server.</p>
+                </div>
             </div>
         </section>
     </main>
 
     <footer id="contatti">
-        <p>Viale Del Correggio 13, Baia Verde, Castel Volturno.</p>
-        <p>Email: associazionemasslo@gmail.com</p>
+        <div class="footer-info">
+            <p><strong>Associazione Jerry Essan Masslo O.D.V. - E.T.S.</strong></p>
+            <p>Sede Legale: Viale Del Correggio 13, Baia Verde, Castel Volturno (CE)</p>
+            <p>C.F. 93013580613</p>
+            <p>Email: <a href="mailto:associazionemasslo@gmail.com">associazionemasslo@gmail.com</a> | PEC: <a href="mailto:associazionemasslo@pec.it">associazionemasslo@pec.it</a></p>
+        </div>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a> |
+            <a href="cookie-policy.html">Cookie Policy</a> |
+            <a href="trasparenza.html">Trasparenza</a>
+        </div>
         <p class="copyright">© <span id="anno-corrente"></span> Associazione Jerry Essan Masslo (ETS/ODV) - Tutti i diritti riservati.</p>
     </footer>
 
@@ -153,6 +168,13 @@
                             boxCifraLibera.classList.remove('visibile');
                         }
                     });
+                });
+            }
+
+            const inputCifra = document.getElementById('input-cifra');
+            if (inputCifra) {
+                inputCifra.addEventListener('input', function() {
+                    this.value = this.value.replace(/[^0-9,]/g, '');
                 });
             }
         });
