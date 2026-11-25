@@ -65,23 +65,23 @@
 
         <section>
             <h2>Boutique Solidale e Distribuzione Itinerante</h2>
-            <p>L’Armadio Solidale è un’iniziativa di grande impatto sociale promossa dall'associazione e resa possibile grazie al prezioso finanziamento dell’Otto per Mille della Chiesa Valdese.</p>
-            <p>Il progetto nasce nel 2021 durante la Camperslitta — la distribuzione natalizia itinerante — quando è emerso chiaramente che le richieste delle famiglie si orientavano soprattutto verso beni di prima necessità come coperte, vestiti e scarpe calde, trasformando un intervento di emergenza in un servizio stabile attivo tutto l'anno.</p>
-            <p>La distribuzione non segue logiche assistenzialistiche: all'interno della sede abbiamo ricreato l'atmosfera di una vera boutique solidale, dove le persone possono scegliere liberamente i capi in un ambiente accogliente che tutela e valorizza la dignità di ciascuno.</p>
-            <p>Per superare i limiti di mobilità del territorio di Castel Volturno, dal 2025 il servizio è stato integrato anche con distribuzioni itineranti in punti strategici della zona.</p>
+            <p>L’Armadio Solidale è un progetto di forte valore sociale promosso dall’Associazione Jerry Masslo e realizzato grazie al prezioso sostegno dell’Otto per Mille della Chiesa Valdese.</p>
+            <p>Nato nel 2021, durante la CamperSlitta, l’iniziativa di distribuzione natalizia itinerante, il progetto ha preso forma a partire dall’ascolto dei bisogni delle famiglie del territorio. In quell'occasione è emersa la necessità di beni essenziali, come coperte, indumenti e scarpe adatte alla stagione invernale. Da questa esperienza è nata l'idea di trasformare un intervento occasionale in un servizio continuativo, attivo durante tutto l'anno.</p>
+            <p>L'Armadio Solidale si fonda su un approccio che supera la tradizionale logica assistenzialistica, infatti, all'interno della sede associativa è stato realizzato uno spazio ispirato a una vera e propria boutique solidale, dove ciascuno può scegliere autonomamente gli indumenti e gli accessori di cui ha bisogno.</p>
+            <p>Per rispondere alle difficoltà di spostamento che caratterizzano il territorio di Castel Volturno, dal 2025 il progetto si è ulteriormente sviluppato attraverso distribuzioni itineranti in punti strategici della zona, avvicinando il servizio alle persone e alle famiglie che incontrano maggiori ostacoli nell'accesso alla sede.</p>
         </section>
 
         <section>
             <h2>Galleria Armadio Solidale</h2>
             <div class="gallery-grid">
                 <div class="gallery-card">
-                    <img src="cose sito/armadio solidale/1.jpg" alt="Spazio boutique solidale">
+                    <img src="cose sito/armadio solidale/7.jpg" alt="Spazio boutique solidale">
                 </div>
                 <div class="gallery-card">
                     <img src="cose sito/armadio solidale/2.jpg" alt="Selezione vestiti">
                 </div>
                 <div class="gallery-card">
-                    <img src="cose sito/armadio solidale/3.jpg" alt="Scelta autonoma abiti">
+                    <img src="cose sito/armadio solidale/6.jpg" alt="Scelta autonoma abiti">
                 </div>
                 <div class="gallery-card">
                     <img src="cose sito/armadio solidale/4.jpg" alt="Distribuzione itinerante">
@@ -158,7 +158,9 @@
 
             galleryImages.forEach(img => {
                 img.addEventListener('click', () => {
+                    modal.scrollTop = 0;
                     modal.classList.add('mostra');
+                    document.body.classList.add('modal-aperto');
                     modalImg.src = img.src;
                     modalImg.alt = img.alt || 'Immagine ingrandita';
                 });
@@ -166,6 +168,7 @@
 
             const closeModal = () => {
                 modal.classList.remove('mostra');
+                document.body.classList.remove('modal-aperto');
             };
 
             if (modalClose) {

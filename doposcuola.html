@@ -65,9 +65,9 @@
 
         <section>
             <h2>Spazio di Studio e Crescita</h2>
-            <p>Il Doposcuola Sociale si propone di contrastare concretamente la povertà educativa e la dispersione scolastica, offrendo uno spazio sicuro e stimolante a bambini e ragazzi che affrontano difficoltà economiche o sociali.</p>
+            <p>Il Doposcuola Sociale, finanziato con i fondi 8xmille della Chiesa Valdese, si propone di contrastare la povertà educativa e la dispersione scolastica, offrendo uno spazio sicuro e stimolante a bambini, bambine, ragazze e ragazzi in situazioni di difficoltà economiche o sociali.</p>
             <p>Oltre all'affiancamento nello svolgimento dei compiti quotidiani, un team di volontari e volontarie organizza attività mirate al recupero delle lacune formative e allo sviluppo delle potenzialità di ciascuno.</p>
-            <p>Grande rilievo viene dato al laboratorio di lingua italiana per bambini di origine straniera, fondamentale per superare le barriere linguistiche e favorire una piena e serena integrazione scolastica e sociale.</p>
+            <p>Grande rilievo ha dato al laboratorio di lingua italiana per bambini e bambine di origine straniera, fondamentale per superare le barriere linguistiche e favorire una l'integrazione scolastica e sociale.</p>
         </section>
 
         <section>
@@ -151,7 +151,9 @@
 
             galleryImages.forEach(img => {
                 img.addEventListener('click', () => {
+                    modal.scrollTop = 0;
                     modal.classList.add('mostra');
+                    document.body.classList.add('modal-aperto');
                     modalImg.src = img.src;
                     modalImg.alt = img.alt || 'Immagine ingrandita';
                 });
@@ -159,6 +161,7 @@
 
             const closeModal = () => {
                 modal.classList.remove('mostra');
+                document.body.classList.remove('modal-aperto');
             };
 
             if (modalClose) {
