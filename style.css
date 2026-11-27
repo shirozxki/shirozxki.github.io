@@ -17,10 +17,6 @@ body {
     animation: pageEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-body.modal-aperto {
-    overflow: hidden;
-}
-
 @keyframes pageEntrance {
     from {
         opacity: 0;
@@ -853,7 +849,7 @@ section p:last-child {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.85);
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Evita che l'immagine venga tagliata in alto se è molto alta */
     padding: 40px 20px;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -877,7 +873,7 @@ section p:last-child {
     box-shadow: 0 5px 25px rgba(0,0,0,0.5);
     transform: scale(0.9);
     transition: transform 0.3s ease;
-    margin: auto;
+    margin: auto; /* Mantiene la centratura se l'immagine è più piccola della finestra */
     display: block;
 }
 
